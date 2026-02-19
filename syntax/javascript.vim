@@ -57,6 +57,7 @@ syntax region  jsString           start=+\z(["']\)+  skip=+\\\%(\z1\|$\)+  end=+
 syntax region  jsTemplateString   start=+`+  skip=+\\`+  end=+`+     contains=jsTemplateExpression,jsSpecial extend
 syntax match   jsTaggedTemplate   /\<\K\k*\ze`/ nextgroup=jsTemplateString
 syntax match   jsNumber           /\c\<\%(\d\+\%(e[+-]\=\d\+\)\=\|0b[01]\+\|0o\o\+\|0x\%(\x\|_\)\+\)n\=\>/
+syntax match   jsNumber           /\.\d[0-9_]*\%([eE][+-]\=\d[0-9_]*\)\=\>/
 syntax keyword jsNumber           Infinity
 syntax match   jsFloat            /\c\<\%(\d\+\.\d\+\|\d\+\.\|\.\d\+\)\%(e[+-]\=\d\+\)\=\>/
 
