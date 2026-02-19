@@ -181,6 +181,7 @@ exe 'syntax match jsFunction /\<function\>/      skipwhite skipempty nextgroup=j
 exe 'syntax match jsArrowFunction /=>/           skipwhite skipempty nextgroup=jsFuncBlock,jsCommentFunction '.(exists('g:javascript_conceal_arrow_function') ? 'conceal cchar='.g:javascript_conceal_arrow_function : '')
 exe 'syntax match jsArrowFunction /()\ze\s*=>/   skipwhite skipempty nextgroup=jsArrowFunction '.(exists('g:javascript_conceal_noarg_arrow_function') ? 'conceal cchar='.g:javascript_conceal_noarg_arrow_function : '')
 exe 'syntax match jsArrowFunction /_\ze\s*=>/    skipwhite skipempty nextgroup=jsArrowFunction '.(exists('g:javascript_conceal_underscore_arrow_function') ? 'conceal cchar='.g:javascript_conceal_underscore_arrow_function : '')
+syntax match jsArrowFunctionParens /()/ contained containedin=jsArrowFunction
 
 " Classes
 syntax keyword jsClassKeyword           contained class
