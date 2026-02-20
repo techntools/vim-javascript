@@ -186,7 +186,7 @@ syntax match jsArrowFunctionParens /()/ contained containedin=jsArrowFunction
 " Classes
 syntax keyword jsClassKeyword           contained class
 syntax keyword jsExtendsKeyword         contained extends skipwhite skipempty nextgroup=@jsExpression
-syntax keyword jsClassConstructor       contained constructor
+syntax keyword jsClassConstructor       contained constructor skipwhite skipempty nextgroup=jsFuncArgs,jsFlowClassFunctionGroup
 syntax match   jsClassNoise             contained /\./
 syntax match   jsClassFuncName          contained /\<\K\k*\ze\s*[(<]/ skipwhite skipempty nextgroup=jsFuncArgs,jsFlowClassFunctionGroup
 syntax match   jsClassMethodType        contained /\<\%([gs]et\|static\)\ze\s\+\K\k*/ skipwhite skipempty nextgroup=jsAsyncKeyword,jsClassFuncName,jsClassProperty
